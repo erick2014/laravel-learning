@@ -15,13 +15,13 @@ class Article extends Model
 
     public function user(){
     	return $this->belongsTo('App\User');
-    }
+    }   
 
     public function image(){
     	return $this->hasMany('App\Image');
     }
 
     public function tag(){
-        return $this->belongsTomany('App\Tag');
+        return $this->belongsToMany('App\Tag')->withTimestamps();
     }
 }
