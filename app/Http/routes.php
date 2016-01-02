@@ -16,13 +16,10 @@ Route::get('/', function () {
 });
 
 Route::group(['prefix'=>'articles'],function(){
-	Route::get('view/{article?}',function($article="vacio"){
-		echo $article;
-	});
-});
-
-Route::get('articles/{nombre?}',function($nombre="no coloco nombre"){
-	echo "El nombre que has colocado es: ".$nombre;
+	Route::get('view/{id}',[
+		'uses'	=>'TestController@view',
+		'as'	=>'articlesview'
+	]);
 });
 
 /*
