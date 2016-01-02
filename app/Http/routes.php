@@ -15,6 +15,16 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::group(['prefix'=>'articles'],function(){
+	Route::get('view/{article?}',function($article="vacio"){
+		echo $article;
+	});
+});
+
+Route::get('articles/{nombre?}',function($nombre="no coloco nombre"){
+	echo "El nombre que has colocado es: ".$nombre;
+});
+
 /*
 |--------------------------------------------------------------------------
 | Application Routes
